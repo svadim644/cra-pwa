@@ -8,7 +8,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.tsx</code> ver 23:21
+          Edit <code>src/App.tsx</code> ver 23:26
         </p>
         <a
           className="App-link"
