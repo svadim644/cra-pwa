@@ -99,19 +99,6 @@ self.addEventListener("fetch", function(event) {
     console.log("fetch event", event);
 });
 
-const swUrl = `${process.env.PUBLIC_URL}/service-worker.js`;
-
-fetch(swUrl, {
-    headers: { 'Service-Worker': 'script' },
-})
-    .then((response) => {
-        console.log('App is running in online mode.');
-    })
-    .catch(() => {
-        console.log('No internet connection found. App is running in offline mode.');
-    });
-
-
 export const logConsole = (txt: string) => {
     console.error('logConsole: ', txt);
 }

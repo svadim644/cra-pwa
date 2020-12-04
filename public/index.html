@@ -21,10 +21,80 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>LotoRu</title>
+
+    <style>
+      @keyframes rotate {
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      @keyframes dash {
+        0% {
+          stroke-dasharray: 1px, 200px;
+          stroke-dashoffset: 0px;
+        }
+        50% {
+          stroke-dasharray: 100px, 200px;
+          stroke-dashoffset: -15px;
+        }
+        100% {
+          stroke-dasharray: 100px, 200px;
+          stroke-dashoffset: -125px;
+        }
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #000;
+      }
+
+      .wrapper {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        position: fixed;
+        z-index: -1;
+      }
+
+      .spinner {
+        animation: rotate 1.4s linear infinite;
+        color: #cb9e44;
+        width: 50vmin;
+        height: 50vmin;
+      }
+
+      .logo {
+        top: 50%;
+        left: 50%;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        max-width: 33vmin;
+      }
+
+      .svg {
+        display: block;
+      }
+
+      .circle {
+        animation: dash 1.4s ease-in-out infinite;
+        stroke-dasharray: 80px, 200px;
+        stroke-dashoffset: 0px;
+        stroke: currentColor;
+      }
+    </style>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div class="wrapper" id="html-spinner">
+      <div class="spinner" role="progressbar">
+        <svg class="svg" viewBox="22 22 44 44">
+          <circle class="circle" cx="44" cy="44" r="20.2" fill="none" stroke-width="3.6"></circle>
+        </svg>
+      </div>
+      <img class="logo" src="%PUBLIC_URL%/assets/logo.svg" alt="" />
+    </div>
+
     <div id="root"></div>
     <!--
       This HTML file is a template.
